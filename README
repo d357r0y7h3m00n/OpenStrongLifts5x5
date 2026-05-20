@@ -1,0 +1,12 @@
+HOW AND WHERE IS THE DATA SAVED?
+
+The data is saved in localStorage — a small key-value store built into every browser, tied to the specific HTML file's location on disk.
+Practically speaking:
+
+Automatic — every time you log a set, finish a workout, or change a setting, it saves instantly with no manual action needed
+Persistent — survives closing the browser or rebooting, as long as you open the same file from the same path
+Local only — never leaves your machine, no account needed
+~5MB limit — more than enough for years of workout history
+One risk — if you clear your browser's site data / cache, or move the file to a different path, the data won't be found. That's what the Export button is for — use it occasionally as a backup, and Import will restore everything from the JSON file.
+
+If you want something more robust (e.g. data that survives browser clears and isn't path-dependent), I could rewrite the storage layer to use a small SQLite file via the filesystem — but that would require a tiny local server to run (one Python command). Want me to add that option?
